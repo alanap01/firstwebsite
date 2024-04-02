@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Towers of Hanoi</title>
+    </head>
+    <body>
+        <h1> Towers of Hanoi</h1>
+        <p id = "output">
+            Simulate Towers of Hanoi for 3 Discs and 3 Posts
+        </p>
+        <button id ="runSimulation">Run Simulation</button>
+    </body>
+    <script>
+        var clicks = 0;
+        function updateContent(){
+            clicks++;
+            var output = "You've clicked " + clicks + " times";
+            document.getElementById("output").textContent = output;
+        }
+        document.getElementById("runSimulation").addEventListener("click", updateContent)
+    </script>
+</html>
