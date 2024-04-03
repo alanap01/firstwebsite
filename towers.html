@@ -1,19 +1,34 @@
 <html>
+
     <head>
         <title>Towers of Hanoi</title>
     </head>
+
+
     <body>
         <h1> Towers of Hanoi</h1>
         <p id = "output">
-            Simulate Towers of Hanoi for 3 Discs and 3 Posts
+            Simulate Towers of Hanoi for 3 Disks and 3 Posts
+
         </p>
         <button id ="runSimulation">Run Simulation</button>
     </body>
-    <script>
-        var clicks = 0;
+
+
+<script>
+        
+        function hanoi(disk, source, dest, aux){
+            if(disk>0){
+            return hanoi(disk-1, source, aux, dest) 
+                + "Moved " + disk + " from " + source + " to " + dest + ". \n"
+                + hanoi(disk-1, aux, dest, source);
+            }
+            return "";
+        }
+
         function updateContent(){
-            clicks++;
-            var output = "You've clicked " + clicks + " times";
+            var output = hanoi (5, "A", "C", "B")
+
             document.getElementById("output").textContent = output;
         }
         document.getElementById("runSimulation").addEventListener("click", updateContent)
