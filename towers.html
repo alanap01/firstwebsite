@@ -20,7 +20,7 @@
         function hanoi(disk, source, dest, aux){
             if(disk>0){
             return hanoi(disk-1, source, aux, dest) 
-                + "Moved " + disk + " from " + source + " to " + dest + ". \n"
+                + "Moved " + disk + " from " + source + " to " + dest + "."
                 + hanoi(disk-1, aux, dest, source);
             }
             return "";
